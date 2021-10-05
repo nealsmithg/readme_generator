@@ -54,8 +54,39 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const body =`asdf`
-    fs.writeFile(fileName, body, (err)=>
+    const body =
+`# ${fileName}
+
+## Description
+${data.description}
+
+## Table of Conternts
+<ol>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#test">Test</a></li>
+    <li><a href="#questions">Questions</a></li>
+</ol>
+    
+## Installation
+${data.installation}
+    
+## Usage
+${data.usage}
+    
+## License
+${data.license}
+    
+## Contributing
+${data.contribution}
+    
+## Test
+${data.test}
+    
+## Questions`
+    fs.writeFile(fileName+".md", body, (err)=>
         err? console.log(err) : console.log("Your file has been writen.")
     );
 };
