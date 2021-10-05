@@ -162,7 +162,9 @@ function generateMarkdown(data) {
       
   ## Questions
   If you have more questions about this project please contact me at:
+  <br/>
   [github](github.com/${data.git_name})
+  <br/>
   <${data.email}>
 `;
 }
