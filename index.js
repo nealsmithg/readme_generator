@@ -38,7 +38,7 @@ const questions = [
         type: "list",
         message: "What license are you using?",
         name: "license",
-        choices: ["MIT", "GPLv2", "Apache", "GPLv3", "BSD 3-clause", "Other", "Unlicensed"],
+        choices: ["Apache", "Boost", "BSD 3-clause", "Eclipse", "GNU GPL v3", "IBM", "ISC", "MIT", "Mozilla", "SIL", "Unlicense", "WTFPL", "Zlib", "none"],
     },
     {
         type: "input",
@@ -54,38 +54,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const body =
-`# ${fileName}
 
-## Description
-${data.description}
-
-## Table of Conternts
-<ol>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#test">Test</a></li>
-    <li><a href="#questions">Questions</a></li>
-</ol>
-    
-## Installation
-${data.installation}
-    
-## Usage
-${data.usage}
-    
-## License
-${data.license}
-    
-## Contributing
-${data.contribution}
-    
-## Test
-${data.test}
-    
-## Questions`
     fs.writeFile(fileName+".md", body, (err)=>
         err? console.log(err) : console.log("Your file has been writen.")
     );
